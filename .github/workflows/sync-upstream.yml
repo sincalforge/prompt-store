@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # 关键这一行，给推送权限
+  contents: write
 
 jobs:
   sync:
@@ -24,4 +24,4 @@ jobs:
           upstream_sync_repo: sincalaway/prompt-store
           upstream_sync_branch: main
           target_sync_branch: main
-          upstream_pull_args: --ff-only   # 注意这里参数名也改了
+          upstream_pull_args: --no-rebase --no-edit   # 允许普通合并
